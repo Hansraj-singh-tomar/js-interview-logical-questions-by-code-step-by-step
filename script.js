@@ -905,6 +905,13 @@ output - button -> second div -> first div*/}
 // console.log(typeof a); // undefined
 // console.log(typeof b); // number
 
+// 98(4)
+// function fun(){
+// 	const a = b = c = 1;  // const a and var b and var c
+//    console.log(typeof a, typeof b, typeof c);  // "number" "number" "number" 
+// }
+// fun();
+//  console.log(typeof a, typeof b, typeof c);  // "undefined" "number" "number" // const a ko ham bahar access nhi kar sakte hai isliye hame undefined dekhne ko mil rha hai 
 
 // 99.
 // true = 1
@@ -915,3 +922,55 @@ output - button -> second div -> first div*/}
 
 // 100.
 // console.log(true + +'10'); // 11 
+
+// 101
+// const nums = [1,2,3,2,4,3];
+// const res = nums.reduce((acc, curr) => {
+// 	return !acc.includes(curr) ? [...acc,curr] : acc; // [1,2,3,4]
+//   // return acc.includes(curr) ? [...acc,curr] : acc; // []
+//   // return acc; // []
+// },[])
+
+// console.log(res); // [1,2,3,4]
+
+// 102
+// const num1 = 0;
+// const num2 = "0";
+
+// const res1 = num1 || null;
+// const res2 = num2 || null;
+
+// console.log(res1); // null
+// console.log(res2); // "0"
+// console.log(true || null) // true
+// console.log(false || null) // null
+// console.log(true || false || null)  // true
+// console.log(undefined || null)  // null
+// console.log(null || undefined)  // undefined
+
+// 103
+// const str = "Jayesh-Jc";
+// const result = str.split("-");
+
+// console.log(str); // "Jayesh-jc"
+// console.log(result); // ["Jayesh", "jc"]
+
+// 104
+// const arr1 = new Array(3);
+// const arr2 = new Array(1,2,3);
+// console.log(arr1); // [undefined, undefined,undefined]
+// console.log(arr2); // [1,2,3]
+
+// 105
+// let name = "jayesh"
+// let result = "";
+// for(let char of name){
+// 	result = char + result;
+// }
+// console.log(result); // "hseyaj"
+
+// 105(2)
+let fruits = ["apple","banana","kiwi"];
+for(name of fruits){
+    console.log(name);  // "apple" "banana" "kiwi"
+}
