@@ -1,145 +1,3 @@
-// Q. Default high order function
-// Q. make custom High order function
-// 1. 
-// let data = 10;
-// Number.prototype.customFun = function(fun1){
-//     console.log(this); // Number {10}
-//     // console.log(x); // (x) => x*100
-//     // console.log(fun1(this)); // 1000
-//     // return fun1(this)
-// }
-// let result = data.customFun((x) => x*100);
-// console.log(result); // 1000
-
-//2.
-// let data = [2,3,4,5,6];
-
-// Array.prototype.custumMap = function(x){
-//     // console.log(this); // (5) [2,3,4,5,6]
-//     return 20;
-// }
-
-// let output = data.custumMap((item) => item*2)
-// console.log(output); // 20 
-
-//3.
-// let data = [2,3,4,5,6];
-
-// Array.prototype.custumMap = function(fun){
-//     console.log(this); // (5) [2, 3, 4, 5, 6]
-//     const result = [];
-//     for( let i = 0; i<this.length; i++){
-//         // console.log(this[i]); // 2 3 4 5 6
-//         // console.log(fun(this[i])); // 4 6 8 10 12
-//         result.push(fun(this[i]))
-//     }
-//     return result;
-// }
-// // let output = data.custumMap(function(item){
-// //     return item*2;
-// // })
-// // or
-// let output = data.custumMap((x) => x*2);
-// console.log(output);  // (5) [4,6,8,10,12] 
-
-
-
-
-// Example of prototype
-
-// 1. Prototype Example
-
-// const user ={
-//     getDetail : function(){
-//         console.log(`My name is ${this.name} and age is ${this.age}`);
-//     }
-// } 
-
-// const student = {
-//     name : "hansraj",
-//     age : 23,
-//     // getDetail : function(){
-//     //     console.log(`My name is ${this.name} and age is ${this.age}`);
-//     // }
-//     // getDetail: user.getDetail,
-//     __proto__ : user
-// }
-
-// const teacher = {
-//     name : "akash sir",
-//     age : 32,
-//     // getDetail : function(){
-//         //     console.log(`My name is ${this.name} and age is ${this.age}`);
-//         // }
-//         // getDetail : user.getDetail, // ye hame hamara data load hone ke sath hi dikhega
-//         __proto__ : user // ye hamare prototype me store hoga jo load hone par dikhega nhi 
-// }
-
-// // student. __proto__ = user;
-// // teacher. __proto__ = user;
-
-// student.getDetail(); // My name is hansraj and age is 23
-// teacher.getDetail(); // My name is akash sir and age is 32
-
-// // getDatail : user.getDetail ka use karne par
-// // console.log(student); // {name: 'hansraj', age: 23, getDetail: ƒ}
-// // console.log(teacher); // {name: 'akash sir', age: 32, getDetail: ƒ}
-
-// // __proto__ : user ka use karne par
-// // isme getDetail function output me nhi dikhega kyonki vo prototype me store ho gya hai jab  hame uski jarurat hogi tab ham usse call kar sakte hai 
-// console.log(student); // {name: 'hansraj', age: 23}
-// console.log(teacher); // {name: 'akash sir', age: 32} 
-
-
-// 2. myAppData globally object ki ek property ban gyi hai jise koi bhi use kar sakta hai 
-
-// Object.prototype.myAppData = "this is a sample project";
-
-// const student = {
-//     name: "hansraj",
-//     age: 24
-// }
-// console.log(student.myAppData);  // this is sample project
-
-// let y = {}
-// console.log(y.myAppData); // this is sample project
-
-
-// 3. property ki jagah ham function bhi add kar sakte hai
-
-// Object.prototype.myAppData = function(){
-//     return "custum function"
-// }
-
-// let y = {}
-// console.log(y.myAppData());  // custum function
-
-
-// 4. object ki jagah ham string bhi use kar sakte hai 
-
-// String.prototype.otherData = "this is a proto for string"
-// let student = {
-//     name: 'hansraj',
-// }
-// console.log(student.name.otherData); // this is a proto for string
-// console.log("hello".otherData); // this is a protot for string
-
-// 5. string datatype ke liye ek function create karenge
-
-// String.prototype.custumLength = function(){
-//     return this.length+2;
-// }
-
-// let student = {
-//     name: 'hansraj',
-// }
-
-// console.log(student.name.custumLength()); // 9 // actual length hai 7 or usme 2 add kar diya hamne 
-// we should not change bydefault properties. 
-
-
-// ---------------------------------///----------//-----------------------------------------------------------
-
 // 1. 
 // let a = [];
 // let b = [];
@@ -696,58 +554,6 @@ output - button -> second div -> first div*/}
 // console.log(...'anil'); // a n i l
 // console.log({...'anil'}); // {0: 'a', 1: 'n', 2: 'i', 3: 'l'}
 
-//  rules of return keyword
-// 1.
-// function abc(){
-//     return (
-//         "hansraj"
-//     )
-// }
-// console.log(abc()); // hansraj
-
-// 2.
-// function abc2(){
-//     return {
-//         "hansraj"
-//     }
-// }
-// console.log(abc2()); // SyntaxError: Unexpected string
-
-// 3. 
-// function abc2(){
-//     return {
-//         hansraj
-//     }
-// }
-// console.log(abc2()); // ReferenceError: hansraj is not defined at abc2
-
-// 4. 
-// function abc2(){
-//     let name = "hansraj";
-//     return {
-//         name,
-//     }
-// }
-// console.log(abc2()); // {name: 'hansraj'}
-
-// 5. 
-// function foo(){
-//     return {
-//         name:'anil'
-//     }
-// }
-// console.log(foo()); // {name: 'anil'}
-
-// 6.
-// function foo(){
-//     return 
-//     {
-//         name:'anil'
-//     }
-// }
-// console.log(foo()); // undefined
-
-
 // 84. Promise.race() means inn dono promise me se jo bhi pehle vala promise resolve hoga vo chalega  
 // const firstPromise = new Promise((res,rej) => {
 //     setTimeout(res,500,'one');
@@ -969,8 +775,190 @@ output - button -> second div -> first div*/}
 // }
 // console.log(result); // "hseyaj"
 
+
 // 105(2)
-let fruits = ["apple","banana","kiwi"];
-for(name of fruits){
-    console.log(name);  // "apple" "banana" "kiwi"
-}
+// let fruits = ["apple","banana","kiwi"];
+// for(name of fruits){
+//     console.log(name);  // "apple" "banana" "kiwi"
+// }
+
+
+
+// -----------------------------------------------------------------------------------------------------
+// other output based logical questions - Code step by step
+
+// 1.
+// (function(){
+//     var a=b=3;
+
+//     // we will write it like that
+//     // b=3;
+//     // var a = b;
+
+//     console.log(a); // 3
+//     console.log(b); // 3
+// })();
+// console.log(typeof a); // undefined 
+// console.log(typeof b); // number
+// console.log(a); // ReferenceError: a is not defined 
+// console.log(b); // 3
+
+// 2. return must be like that return { ... } curly brackes must be start with in a line otherwise it will give us error
+// function foo(){
+//     return 
+//     {
+//         name: "hansraj"
+//     }
+// }
+// console.log(foo()); // undefined
+
+
+// 3. 
+// let a = 3;
+// let b = +"4";
+// let c = -"5";
+// console.log(typeof a); // number 
+// console.log(typeof b); // number
+// console.log(typeof c); // number
+// console.log(c); // -5
+// console.log(typeof (a+c)); // -2 // typeof (a+c) number 
+ 
+
+// 4.
+// var a = 0;
+// function b(){
+//     a = 10;
+//     return ;
+//     var a = function(){}
+// }
+
+// console.log(b()); // undefined
+// console.log(a); // 0
+
+// 5.
+// var a = 0
+// function fun(){
+//     a = 15
+//     console.log(a); // 15
+// }
+// console.log(a); // 0
+// fun();
+
+// 6. - concept of hoisting 
+// test();
+// function test(){
+//     console.log("test fun called");
+// }
+
+// 7. 
+// function expression ki hoisting nhi hoti hai => const temp = function(){ ... }
+// but function declaration ki hoisting hoti hai => fun(){....}
+
+// console.log(test); // undefined
+// test(); // test is not a function 
+// var test = function(){
+//     console.log("function called");
+// }
+ 
+
+// 8. - This is also concept of hoisting
+// function test(){
+//     function foo(){
+//         return 100;
+//     }
+
+//     return foo()
+
+//     function foo(){
+//         return 10;
+//     }
+// }
+// console.log(test());// 10 // return 10 vale foo function ne isse override kar diya hai before retunring foo function  
+
+// 9. Based on Boolean 
+// console.log(true + true); // 2
+// console.log(true + false); // 1
+// console.log(-true+true+false); // 0
+
+// 10. This Question is asked in Microsoft Interview 
+// you will have given 
+// var addSix = createBase(6);
+// addSix(19); // return 16
+// addSix(21); // return 27,  so we will use in that case closure
+
+// function createBase(a){
+//     return function(b){
+//        console.log(a+b);
+//     }
+// }
+// var addSix = createBase(6);
+// addSix(10);
+// addSix(21);
+
+// 11. 
+// console.log(!10); // false 
+// console.log(!false); // true
+// console.log(!!10+20); // !10 = false then !false = true and true = 1 and 1 + 20 = 21
+
+// 12.
+// let x = 0;
+// console.log(x++); // 0
+// console.log(x); // 1 
+// console.log(++x); // 2
+// console.log(++x); // 3
+
+// 13.
+// console.log(3+4+"5"); // "75"
+
+// 14.
+// const obj = {
+//     a: "one",
+//     b: "two",
+//     a: "three"
+// };
+// console.log(obj); // {a: 'three', b: 'two'}
+
+// 15.
+// let person = {name: "hansraj"};
+// const members = [person];
+// person = null;
+// console.log(members); // [{name: "hasnraj"}]
+// console.log(person); // null
+
+// 16.
+// let person = {
+//     name: "hansraj"
+// }
+
+// const member = person;
+// person = null;
+// console.log(person); // null
+// console.log(member); // {name: "hasnraj"}
+
+// 17.
+// let person = {
+//     name: "hansraj"
+// }
+
+// const member = person;
+// member.name = "Rohit"
+// console.log(person); // {name: "rohit"}
+// console.log(member); // {name: "rohit"}
+
+// 18.
+// function getAge(...args){
+//     console.log(typeof args); // 'object'
+// }
+// getAge<(21); 
+
+// 19. how will you optimize performance of loop
+
+// let arr = [1,2,3,]
+// let length = arr.length; // isse yha alag se variable me assign karne par hamare loop ki performance optimize hogi 
+// for(let i = 0; i < length; i++){
+    // Do some work
+// }
+
+// 20.
+// console.log(typeof NaN); // number
+
