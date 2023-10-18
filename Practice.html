@@ -9,60 +9,7 @@
 <body>
     <h1>JS logical questions</h1>
     <script>
-        const calc = (n) => {
-            let sum = 0;
-            for(let i = 0; i <= n; i++){
-                sum += i;
-            }
-            return sum;
-        }
-        // const memoization = (fun) => {
-        //     let cache = {}
-        //     return (...args) => {
-        //         n = args[0];
-
-        //         if(n in cache){
-        //             return cache[n];
-        //         }else{
-        //             let result = fun(n) // it will return us 15
-        //             cache[n] = result; // and then we save it in cache // {'5': 15} // it will save it like that.
-        //             return result; // and return this result 
-        //         }
-        //     }
-        // }
-        // console.time();
-        // const efficience = memoization(calc)
-        // console.log(efficience(5)); // 15
-        // console.timeEnd();
-
-        // now we will do it using Map() data structure - in that we can store data in key and vlaue form 
             
-        // const memoization = (fun) => {
-        //     const cache = new Map();
-        //     return (...args) => {
-        //         const n = args[0];
-        //         if(cache.has(n)){
-        //             return cache.get(n);
-        //         }else{
-        //             let result = fun.apply(null, args);
-        //             cache.set(n, result);
-        //             return result;
-        //         }
-        //     }
-        // }
-
-        // console.time();
-        // const eficience = memoization(calc);
-        // console.log(eficience(3));
-        // console.timeEnd();
-
-        // myMap.set("key", "value")
-
-        const time = setTimeout(() => {
-            console.log("this is settimeout function");
-        }, 1000);
-        console.log(time); // 1
-</script>
-
+    </script>
 </body>
 </html>
